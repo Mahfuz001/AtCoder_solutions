@@ -25,10 +25,25 @@ int main(int argc, char* argv[]){
     //freopen("output.txt","w",stdout);
     #endif
     
-	int a, b, t; cin >> a >> b >> t;
+	int n; cin >> n;
+	vector<int> vec(n);
 	
-	int nTimes = t/a;
-	cout << b*nTimes << "\n";
+	forn(i, 0, n) cin >> vec[i];
+	
+	sort(vec.begin(), vec.end());
+	
+	
+	for(int i = vec[1]; i > 0; i--){
+		int c = 0;
+		for(int j = 0; j < n; j++){
+			if(vec[j] % i != 0) c++;
+		}
+		
+		if(c < 2){
+			cout << i << "\n";
+			break;
+		}
+	}
     
 
     return 0;

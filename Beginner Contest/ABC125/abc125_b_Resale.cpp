@@ -25,10 +25,22 @@ int main(int argc, char* argv[]){
     //freopen("output.txt","w",stdout);
     #endif
     
-	int a, b, t; cin >> a >> b >> t;
+	int n; cin >> n;
 	
-	int nTimes = t/a;
-	cout << b*nTimes << "\n";
+	int x = 0, y = 0;
+	int v[n], c[n];
+	
+	forn(i, 0, n) cin >> v[i];
+	forn(i, 0, n) cin >> c[i];
+	
+	forn(i, 0, n){
+		if(v[i] > c[i]){
+			x += v[i];
+			y += c[i];
+		}
+	}
+	
+	cout << x-y << "\n";
     
 
     return 0;

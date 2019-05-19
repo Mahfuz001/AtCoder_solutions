@@ -25,10 +25,26 @@ int main(int argc, char* argv[]){
     //freopen("output.txt","w",stdout);
     #endif
     
-	int a, b, t; cin >> a >> b >> t;
+	double a, b; cin >> a >> b;
+	double t; cin >> t;
+	t+= 0.05;
 	
-	int nTimes = t/a;
-	cout << b*nTimes << "\n";
+	int cnt = 1;
+	int currTime = a;
+	while(currTime < t){
+		cnt++;
+		currTime = a*cnt;
+		
+	}
+	cnt--;
+	if(t > a){
+		cout << int(b*cnt);
+	}else{
+		cout << 0;
+	}
+	
+	cout << "\n";
+	
     
 
     return 0;
